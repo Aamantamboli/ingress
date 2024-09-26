@@ -6,7 +6,7 @@ metadata:
   labels:
       app: deployappfront
 spec:
-    replicas: 2     #desiredstate
+    replicas: 1     #desiredstate
     strategy: 
           type: RollingUpdate
     selector: 

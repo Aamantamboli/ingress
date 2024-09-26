@@ -6,7 +6,7 @@ metadata:
   labels:
       app: deployappback
 spec:
-    replicas: 2     #desiredstate
+    replicas: 1     #desiredstate
     strategy: 
           type: RollingUpdate
     selector: 
@@ -21,7 +21,7 @@ spec:
              - name: backendapp
                image: aamantamboli/season
                ports:
-                  - containerPort: 8080
+                  - containerPort: 81
                     protocol: TCP
                resources:
                   requests:
