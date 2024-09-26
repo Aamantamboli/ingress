@@ -19,7 +19,7 @@ spec:
         spec: 
           containers:
              - name: frontendapp
-               image: aamantamboli/todo
+               image: aamantamboli/todoapp
                ports:
                   - containerPort: 80
                     protocol: TCP
