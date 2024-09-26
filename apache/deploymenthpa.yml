@@ -19,9 +19,9 @@ spec:
         spec: 
           containers:
              - name: backendapp
-               image: aamantamboli/todoapp
+               image: aamantamboli/season
                ports:
-                  - containerPort: 81
+                  - containerPort: 8080
                     protocol: TCP
                resources:
                   requests:
