@@ -18,7 +18,7 @@ spec:
         spec: 
           containers:
              - name: todoapp
-               image: aamantamboli/todoapp:latest
+               image: aamantamboli/todo
                ports:
                   - containerPort: 80
                     protocol: TCP
