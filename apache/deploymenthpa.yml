@@ -19,7 +19,7 @@ spec:
         spec: 
           containers:
              - name: seasonapp
-               image: aamantamboli/season:latest
+               image: aamantamboli/season:8080
                ports:
                   - containerPort: 8080
                     protocol: TCP
