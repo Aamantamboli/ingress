@@ -1,25 +1,24 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployappfront
+  name: todoapp
   labels:
-      app: deployappfront
+      app: todoapp
 spec:
-    replicas: 1     #desiredstate
+    replicas: 2     #desiredstate
     strategy: 
           type: RollingUpdate
     selector: 
           matchLabels:
-            app: deployappfront
+            app: todoapp
     template: 
         metadata: 
             labels: 
-              app: deployappfront   
+              app: todoapp   
         spec: 
           containers:
-             - name: frontendapp
-               image: aamantamboli/todoapp
+             - name: todoapp
+               image: aamantamboli/todoapp:latest
                ports:
                   - containerPort: 80
                     protocol: TCP
@@ -39,7 +38,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: deployappfront
+    name: todoapp
   minReplicas: 1
   maxReplicas: 4
   metrics:

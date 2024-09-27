@@ -2,24 +2,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployappback
+  name: seasonapp
   labels:
-      app: deployappback
+      app: seasonapp
 spec:
-    replicas: 1     #desiredstate
+    replicas: 2     #desiredstate
     strategy: 
           type: RollingUpdate
     selector: 
           matchLabels:
-            app: deployappback
+            app: seasonapp
     template: 
         metadata: 
             labels: 
-              app: deployappback   
+              app: seasonapp   
         spec: 
           containers:
-             - name: backendapp
-               image: aamantamboli/season:8080
+             - name: seasonapp
+               image: aamantamboli/season:latest
                ports:
                   - containerPort: 8080
                     protocol: TCP
@@ -39,7 +39,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: deployappback
+    name: seasonapp
   minReplicas: 1
   maxReplicas: 4
   metrics:
